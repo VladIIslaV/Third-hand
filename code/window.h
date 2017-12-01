@@ -21,25 +21,20 @@ public:
     explicit Window(QWidget *parent = 0);
 
 public slots:
-    void moveFinger0();
-    void moveFinger1();
-    void moveFinger2();
-    void moveFinger3();
-    void moveFinger4();
+    void moveHand0();
+    void moveHand1();
+    void moveHand2();
+    void moveHand3();
+    void moveHand4();
     void getMsg();
 private:
-
-    QScrollBar
-        *finger0,
-        *finger1,
-        *finger2,
-        *finger3,
-        *finger4;
+    QScrollBar *hand[5];
     QSerialPort *com;
     QLabel *label;
     QPalette *pwin;
     ofstream file;
 
+    bool shn_send_msg;  //flag has TRUE value when you should not send message to device
 };
 
 #endif // WINDOW_H
